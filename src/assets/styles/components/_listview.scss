@@ -1,0 +1,22 @@
+.listview {
+margin-top: 10rem;
+  &__item {
+    position: relative;
+    height: 500px;
+    cursor: pointer;
+  }
+  &__item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100%;
+    visibility: hidden;
+  }
+}
+// push event
+.listview .col-6:nth-child(even){
+    .listview__item{
+        transform: translateY(6rem);
+    }
+}
