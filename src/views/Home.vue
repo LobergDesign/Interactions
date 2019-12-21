@@ -66,3 +66,12 @@ export default class Home extends Vue {
   }
 }
 </script>
+<style scoped lang="scss">
+.test-dis {
+  height: 600px;
+  width: 600px;
+}
+img {
+  max-width: 80%;
+}
+</style>
