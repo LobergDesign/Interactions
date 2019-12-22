@@ -1,3 +1,4 @@
+
 // @ts-ignore
 import hoverEffect from "hover-effect";
 export default class DistortionEffect {
@@ -5,21 +6,22 @@ export default class DistortionEffect {
         this.hoverDistortionEffect();
     }
     private hoverDistortionEffect = () => {
-        Array.from(document.querySelectorAll("[data-distortion-effect]")).forEach((el: HTMLElement) => {
-            const imgs = Array.from(el.querySelectorAll('img'));
+      
+        Array.from(document.querySelectorAll("[data-distortion-effect]")).forEach((elm: HTMLElement) => {
+            const imgs = Array.from(elm.querySelectorAll('img'));
             new hoverEffect({
-                parent: el,
-                intensity: el.dataset.intensity || undefined,
-                speedIn: el.dataset.speedin || undefined,
-                speedOut: el.dataset.speedout || undefined,
-                easing: el.dataset.easing || undefined,
-                hover: el.dataset.hover || undefined,
+                parent: elm,
+                intensity: elm.dataset.intensity || undefined,
+                speedIn: elm.dataset.speedin || undefined,
+                speedOut: elm.dataset.speedout || undefined,
+                easing: elm.dataset.easing || undefined,
+                hover: elm.dataset.hover || undefined,
                 image1: imgs[0].getAttribute('src'),
                 image2: imgs[1].getAttribute('src'),
-                displacementImage: el.dataset.displacementimage,
-                width: 500,
+                displacementImage: elm.dataset.displacementimage,
+                preserveDrawingBuffer: true,
+                alpha: true,
             });
-            (el as HTMLElement).classList.add("sdfsdf");
-        });
+        }, false);
     }
 }

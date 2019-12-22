@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div class="home" data-content>
+    <div class="container">
     <HelloWorld msg="ThreeJs hover" />
     <h2>Distortion effect</h2>
     <div class="listview">
@@ -46,6 +47,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -66,12 +68,4 @@ export default class Home extends Vue {
   }
 }
 </script>
-<style scoped lang="scss">
-.test-dis {
-  height: 600px;
-  width: 600px;
-}
-img {
-  max-width: 80%;
-}
-</style>
+

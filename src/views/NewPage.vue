@@ -1,9 +1,9 @@
 <template>
-  <div class="about" data-content>
+  <div class="new-page" data-content>
     <div class="wrap">
       <div class="container">
-        <h1>This is an about page</h1>
-        <p>
+        <h1>This is a new page</h1>
+          <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -21,6 +21,7 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
+         <img src="@/assets/images/test1.jpg" alt="">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -30,7 +31,7 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <img src="@/assets/images/test1.jpg" alt="">
+       
       </div>
     </div>
   </div>
