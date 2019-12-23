@@ -32,9 +32,7 @@
         </p>
         <img src="@/assets/images/test1.jpg" alt="">
       </div>
-      <div class="tabs">
-        <h2>Tabs</h2>
-      </div>
+
     </div>
   </div>
 </template>

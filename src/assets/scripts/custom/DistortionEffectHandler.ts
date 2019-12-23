@@ -1,4 +1,3 @@
-
 // @ts-ignore
 import hoverEffect from "hover-effect";
 export default class DistortionEffect {
