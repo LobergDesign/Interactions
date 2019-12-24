@@ -16,12 +16,25 @@ p {
   text-align: left;
   padding-bottom: 1.5rem;
 }
+.reset-btn{
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+}
+.reset-ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  min-height: 100vh;
 }
 
 #nav {
@@ -33,7 +46,7 @@ p {
   text-align: right;
   transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   padding: 30px;
-  z-index: 5;
+  z-index: 6;
 
   a {
     font-weight: bold;
@@ -44,13 +57,23 @@ p {
     }
   }
 }
-
+button{
+  cursor: pointer;
+}
+h2{
+  text-align: left;
+}
+p{
+  line-height: 1.5;
+  color: rgb(90, 90, 90);
+}
 img {
   max-width: 100%;
 }
 .container {
   margin: 0 auto;
-  max-width: 80vw;
+  width: 80vw;
+  max-width: 1500px;
   padding-left: $grid-sacing;
   padding-right: $grid-sacing;
 }
@@ -85,6 +108,7 @@ canvas {
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 5;
 //   min-height: 100vh;
   padding-top: 12rem;
   transition: all 1.2s cubic-bezier(0.69, 0, 0.27, 0.99);

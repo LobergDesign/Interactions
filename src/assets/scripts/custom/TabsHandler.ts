@@ -10,29 +10,39 @@ export default class Tabs {
 
     constructor() {
         this.tabs();
+        this.activeTabHandler();
     }
     private tabs = () => {
-
         this.tabOptionsArray.forEach(tab => {
-
             tab.addEventListener('click', () => {
                 // get attr from clicked element
                 const getTabAttr = tab.getAttribute('data-tab-option');
                 // get the matching content id
                 const tabContent = this.tabContentList.querySelector("#" + getTabAttr);
+                const tabContentHeight = tabContent.clientHeight;
+                
+                // set height of tab based on content
+                (this.tabContentList as HTMLElement).style.height = "" + tabContentHeight + "px";
 
-                // remove is-selected class from all tab options
+                // remove is-selected class from all tab options and content
                 this.tabOptionsArray.forEach(tabItem => tabItem.classList.remove(this.selectedClass));
-
-                // remove is-active class from all content sections
                 this.tabContentArray.forEach(contentItem => contentItem.classList.remove(this.activeClass));
 
-                // add is-selected
+                // add active clases to clicked tab and matching content
                 tab.classList.add(this.selectedClass);
-
-                  // add is-active
                 tabContent.classList.add(this.activeClass);
             })
         })
+    }
+    private activeTabHandler = () =>{
+        const activeContent = (this.tabContentNodelist[0] as HTMLElement);
+        const activeContentHeight = activeContent.clientHeight;
+        
+        // set active class to tab option and content
+        (this.tabOptions[0] as HTMLElement).classList.add(this.selectedClass);
+        activeContent.classList.add(this.activeClass);
+
+        // set height of active content
+        (this.tabContentList as HTMLElement).style.height = "" + activeContentHeight + "px";
     }
 }

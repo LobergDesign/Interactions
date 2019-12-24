@@ -1,7 +1,77 @@
 .tab {
+  position: relative;
+  margin: 6rem 0 8rem;
+
+  // tab options
   &__options {
-    li {
-      font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  &__options li {
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    width: 100%;
+  }
+  &__options button {
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 2rem;
+    transition: color 0.4s cubic-bezier(0.69, 0, 0.27, 0.99);
+    position: relative;
+    z-index: 2;
+  }
+
+  // content
+  &__content {
+   
+    background-color: #f9f9f9;
+    transition: height 0.4s cubic-bezier(0.69, 0, 0.27, 0.99);
+  }
+  &__content-section {
+    padding: 2rem 4rem;
+    position:absolute;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.69, 0, 0.27, 0.99);
+  }
+}
+// hover state
+.tab {
+  // tab options
+  &__options li:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(90, 90, 90);
+    transform: translateY(100%);
+    transition: all 0.4s cubic-bezier(0.69, 0, 0.27, 0.99);
+  }
+  &__options li:hover {
+    &:after{
+      transform: translateY(90%);
     }
+  }
+}
+// active states
+.tab {
+  // tab options
+  &__options li.is-selected {
+    &:after{
+      transform: translateY(0);
+    }
+    button{
+      color: white;
+    }
+  }
+  // section
+  &__content-section.is-active {
+    opacity: 1;
   }
 }

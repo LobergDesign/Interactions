@@ -27,7 +27,6 @@ import "@/assets/styles/styles.scss";
 export default class App extends Vue {
   mounted() {
   }
-
   beforeEnter(el: HTMLElement) {
     const init = new PageTransition();
     return init.beforeEnter(el);
