@@ -21,22 +21,15 @@ const routes = [
   {
     path: '/newpage',
     name: 'newpage',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/NewPage.vue')
+    component: () => import( '../views/NewPage.vue')
   }
 ]
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior (to, from, savedPosition) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ x: 0, y: 0 })
-      }, 500)
-    })
+  scrollBehavior () {
+    return { x: 0, y: 0 }
   }
 })
 

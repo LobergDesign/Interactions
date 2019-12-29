@@ -16,6 +16,6 @@ export default class PageTransition {
     public leave = (el: HTMLElement | undefined) => { // current page leaves
         el.style.opacity = "0.5";
         el.style.zIndex = "1";
-        el.style.transform = "translateY(-50%)";
+        el.style.transform = "translateY(-40%)";
     }
 }

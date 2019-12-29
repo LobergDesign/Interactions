@@ -11,6 +11,8 @@ export default class Tabs {
     constructor() {
         this.tabs();
         this.activeTabHandler();
+        this.tabsResizeHandler();
+    
     }
     private tabs = () => {
         this.tabOptionsArray.forEach(tab => {
@@ -19,7 +21,7 @@ export default class Tabs {
                 const getTabAttr = tab.getAttribute('data-tab-option');
                 // get the matching content id
                 const tabContent = this.tabContentList.querySelector("#" + getTabAttr);
-                const tabContentHeight = tabContent.clientHeight;
+                let tabContentHeight = tabContent.clientHeight;
                 
                 // set height of tab based on content
                 (this.tabContentList as HTMLElement).style.height = "" + tabContentHeight + "px";
@@ -34,15 +36,22 @@ export default class Tabs {
             })
         })
     }
-    private activeTabHandler = () =>{
+    private activeTabHandler = () => {
         const activeContent = (this.tabContentNodelist[0] as HTMLElement);
         const activeContentHeight = activeContent.clientHeight;
-        
+
         // set active class to tab option and content
         (this.tabOptions[0] as HTMLElement).classList.add(this.selectedClass);
         activeContent.classList.add(this.activeClass);
 
         // set height of active content
         (this.tabContentList as HTMLElement).style.height = "" + activeContentHeight + "px";
+    }
+    private tabsResizeHandler = () => {
+        window.addEventListener('resize', () => {
+            const currentTabContentSelector = document.querySelector('.tab__content-section.is-active');
+            const currentHeight = (currentTabContentSelector as HTMLElement).offsetHeight;
+            (this.tabContentList as HTMLElement).style.height = "" + currentHeight + "px";
+        });
     }
 }

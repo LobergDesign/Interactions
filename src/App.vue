@@ -5,12 +5,9 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/newpage">newpage</router-link>
     </div>
+
     <main class="main-wrap">
-      <transition
-        @before-enter="beforeEnter"
-         @enter="enter"
-        @leave="leave"
-      >
+      <transition @before-enter="beforeEnter" @enter="enter" @leave="leave">
         <router-view />
       </transition>
     </main>
@@ -31,8 +28,8 @@ export default class App extends Vue {
     const init = new PageTransition();
     return init.beforeEnter(el);
   }
-    enter(el: HTMLElement) {
-      const init = new PageTransition();
+  enter(el: HTMLElement) {
+    const init = new PageTransition();
     return init.enter(el);
   }
   leave(el: HTMLElement) {
