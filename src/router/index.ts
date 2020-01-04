@@ -22,6 +22,11 @@ const routes = [
     path: '/newpage',
     name: 'newpage',
     component: () => import( '../views/NewPage.vue')
+  },
+  {
+    path: '/simpleslider',
+    name: 'simpleslider',
+    component: () => import( '../views/SimpleSlider.vue')
   }
 ]
 const router = new VueRouter({

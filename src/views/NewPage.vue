@@ -104,8 +104,8 @@
   </div>
 </template>
 <script lang="ts">
-import "@/assets/styles/components/_tabs.scss";
 import { Vue, Component } from "vue-property-decorator";
+import "@/assets/styles/components/_tabs.scss";
 import Tabs from "@/assets/scripts/custom/TabsHandler";
 
 @Component
