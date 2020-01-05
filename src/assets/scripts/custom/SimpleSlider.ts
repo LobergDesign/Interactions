@@ -20,6 +20,7 @@ export default class SimpleSlider {
         (this.activityCalendarListWrap as HTMLElement).style.height = "" + activeContentHeight + "px";
     }
     private newToggle = () => {
+
         (this.currentBtn as HTMLButtonElement).classList.add(this.selectedClass);
         // toggle prev
         (this.prevBtn as HTMLButtonElement).addEventListener("click", (e: Event) => {

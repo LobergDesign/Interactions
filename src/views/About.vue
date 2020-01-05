@@ -51,30 +51,18 @@
     </div>
   </div>
 </template>
-<script>
- import * as THREE from 'three'
-export default {
- 
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import HoverCursorThree from "@/assets/scripts/custom/HoverCursorThree";
 
-	// constructor() {
-	// 	this.container = document.getElementById('stage');
 
-	// 	this.scene = new THREE.Scene()
-	// 	this.renderer = new THREE.WebGLRenderer({
-	// 		canvas: this.container,
-	// 		alpha: true,
-	//   })
+@Component
+export default class Home extends Vue {
 
-	// 	this.renderer.setSize(window.innerWidth, window.innerHeight)
-	// 	this.renderer.setPixelRatio(window.devicePixelRatio)
 
-	// 	this.initLights()
-	// }
-
-	// private initLights = () => {
-	// 	const ambientlight = new THREE.AmbientLight(0xffffff, 2)
-	// 	this.scene.add(ambientlight)
-	// }
-
+  mounted() {
+    const initHoverCursor = new HoverCursorThree();
+    return initHoverCursor;
+  }
 }
 </script>
